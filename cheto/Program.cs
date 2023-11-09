@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -22,7 +22,7 @@ namespace homework7
             Bank account_2 = new Bank(BankType.Сберегательный);
             Console.WriteLine("Как вас зовут?");
             string name_user = Console.ReadLine();
-            
+            Console.WriteLine("Лабораторная работа 9 главы\n");
             Console.WriteLine($"Здравствуйте {name_user}!\n" +
                 $"Какой командой вы хотите воспользоваться?\n" +
                 $"Пополнить баланс - нажмите 1.\n" +
@@ -50,7 +50,8 @@ namespace homework7
                                 Deposit_cash = double.TryParse(Console.ReadLine(),out cash);
                             } while (!Deposit_cash);
                         }
-                        account_1.DepositMoney(cash); 
+                        account_1.DepositMoney(cash);
+                        account_1.Dispose();
                         break;
                     case "2":
                         Console.WriteLine("Введите сумму, которую вы хотите снять");
@@ -64,6 +65,7 @@ namespace homework7
                             } while (!Withdrawal_Of_Funds);
                         }
                         account_1.WithdrawalOfFunds(withdrawal_cash);
+                        account_1.Dispose();
                         break;
                     case "3":
                         Console.WriteLine("Введите реквизиты клиента банка");
@@ -89,6 +91,7 @@ namespace homework7
                             } while (!money_nums);
                         }
                         account_1.Money_Transfer(money, account_2);
+                        account_1.Dispose();
                         break;
                     case "4":
                         account_1.Balance();
@@ -113,21 +116,3 @@ namespace homework7
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
