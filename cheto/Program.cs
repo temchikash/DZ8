@@ -20,10 +20,12 @@ namespace Lab
             
             Bank account_1 = new Bank(BankType.Сберегательный);
             Bank account_2 = new Bank(BankType.Сберегательный);
-            Console.WriteLine("Как вас зовут?");
+            Console.WriteLine("Вас приветствует бот-аудиоответчик нашего банка, чтобы я открыл доступ к воспользованию функциям банка,\n" +
+                "мне необходима информация о вас\n" +
+            "Введите имя и фамилию: \n ");
             string name_user = Console.ReadLine();
             Console.WriteLine("Лабораторная работа 9 главы\n");
-            Console.WriteLine($"Здравствуйте {name_user}!\n" +
+            Console.WriteLine($"Здравствуйте {name_user}, хорошего вам настроения!\n" +
                 $"Какой командой вы хотите воспользоваться?\n" +
                 $"Пополнить баланс - нажмите 1.\n" +
                 $"Снять средства со счёта - нажмите 2.\n" +
@@ -110,13 +112,13 @@ namespace Lab
         {
             Console.WriteLine("HomeWork1\n");
 
-            Song song1 = new Song("Ирина Кайратовна", "5000");
-            Song song2 = new Song("Ирина Кайратовна", "5000",song1);
-            Song song3 = new Song("Special", "Yanix",song2);
-            Song song4 = new Song("Мальчики", "163onmyneck",song3);
-            Song song5 = new Song("Timati", "5000",song4);
+            Song MySong1 = new Song("Ирина Кайратовна", "5000");
+            Song MySong2 = new Song("Ирина Кайратовна", "5000", MySong1);
+            Song MySong3 = new Song("Special", "Yanix", MySong2);
+            Song MySong4 = new Song("Мальчики", "163onmyneck", MySong3);
+            Song MySong5 = new Song("Timati", "5000", MySong4);
 
-            List<Song> list = new List<Song>() { song1, song2, song3, song4, song5 };
+            List<Song> list = new List<Song>() { MySong1, MySong2, MySong3, MySong4, MySong5 };
             for (int i = 0; i < list.Count; i++)
             {
                 list[i].SongName();
