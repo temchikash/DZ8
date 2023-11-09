@@ -11,7 +11,7 @@ using homework8;
 
 
 
-namespace homework7
+namespace Lab
 {
     internal class Program
     {
@@ -106,13 +106,47 @@ namespace homework7
                 }
             }while (!function.Equals("5"));
         }
-    static void Main(string[] args)
+        static void DoNum2()
+        {
+            Console.WriteLine("HomeWork1\n");
+
+            Song song1 = new Song("Ирина Кайратовна", "5000");
+            Song song2 = new Song("Ирина Кайратовна", "5000",song1);
+            Song song3 = new Song("Special", "Yanix",song2);
+            Song song4 = new Song("Мальчики", "163onmyneck",song3);
+            Song song5 = new Song("Timati", "5000",song4);
+
+            List<Song> list = new List<Song>() { song1, song2, song3, song4, song5 };
+            for (int i = 0; i < list.Count; i++)
+            {
+                list[i].SongName();
+                list[i].SongAuthor();
+                if (i != 0)
+                {
+                    list[i].prev_song = list[i - 1];
+                }
+                list[i].Print();
+
+            }
+
+            if (list[1].Equals(list[4].prev_song))
+            {
+                Console.WriteLine($"Песня {list[1].Print()} и песня {list[4].prev_song.Print()} одинаковы ");
+            }
+            else
+            {
+                Console.WriteLine("Это разные песни");
+            }
+        }
+
+        static void Main(string[] args)
 
         {
             DoNum1();
+            DoNum2();
             
 
-            Console.ReadKey(true);
+            Console.ReadKey();
         }
     }
 }
