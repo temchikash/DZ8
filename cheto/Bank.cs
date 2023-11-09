@@ -16,7 +16,7 @@ namespace homework8
     }
     class Bank
     {
-        private static uint id_account = 0;
+        private static uint id_account = 1;
         private uint id;
         private double balance;
         private BankType type;
