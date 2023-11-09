@@ -136,7 +136,7 @@ namespace homework8
                 foreach (BankTransaction place in operations)
                 {
                     File.WriteAllText("operations.txt", place.DataOnTheMonetaryTransaction());
-                    //transactions.Dequeue();
+                    
                 }
                 operations.Clear();
                 disp = true;
