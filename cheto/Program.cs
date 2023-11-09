@@ -146,7 +146,7 @@ namespace Lab
             DoNum2();
             
 
-            Console.ReadKey();
+            Console.ReadKey(true);
         }
     }
 }
